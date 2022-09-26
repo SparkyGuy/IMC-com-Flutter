@@ -26,7 +26,18 @@ class HomePage  extends StatelessWidget {
       ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          var peso = 0.0;
+          var altura = 0.0;
+          var imc = 0.0;
+          if (altura > 0.0) {
+          imc = peso / (altura*altura); 
+          }
+
+          ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+            content: Text("Seu IMC é $imc"),
+          ));
+        },
         child: const Icon(Icons.calculate)
       ),
     );
